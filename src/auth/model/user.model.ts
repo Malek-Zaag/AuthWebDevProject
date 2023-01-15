@@ -7,10 +7,10 @@ export class UserModel {
   id: string;
   @Column({ unique: true })
   username: string;
-  @Column({
-    length: 8,
-  })
+  @Column()
   password: string;
+  @Column()
+  salt: string;
   @Column({
     unique: true
   })

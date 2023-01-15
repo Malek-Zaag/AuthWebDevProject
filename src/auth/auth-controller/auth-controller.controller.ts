@@ -4,6 +4,7 @@ import { Body, Get, Post } from '@nestjs/common/decorators';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { AuthServiceService } from '../auth-service/auth-service.service';
 import { CredentialsDTO } from '../dto/credentialsDTO';
+import { UserModelDTO } from '../dto/userModelDTO';
 import { UserModel } from '../model/user.model';
 
 @Controller('auth-controller')
@@ -16,10 +17,10 @@ export class AuthControllerController {
   }
 
   @Post('/addUser')
-  addUser(@Body() user: UserModel): Promise<UserModel> {
+  addUser(@Body() user: UserModelDTO): Promise<UserModel> {
     return this.AuthServiceService.addUser(user);
   }
-  @Get('/loginUser')
+  @Post('/loginUser')
   loginUser(@Body() userCredentials: CredentialsDTO): Promise<UserModel> {
     return this.AuthServiceService.loginUser(userCredentials);
   }
