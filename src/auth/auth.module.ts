@@ -9,7 +9,8 @@ import { UserModel } from './model/user.model';
   imports: [
     TypeOrmModule.forFeature(
       [UserModel]
-    )],
+    ),
+  ],
   controllers: [AuthControllerController],
   providers: [AuthServiceService],
 })
