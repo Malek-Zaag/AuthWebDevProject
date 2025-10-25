@@ -1,3 +1,7 @@
 {
-  "autoApprove": true
-},
+  "extends": ["config:base"],
+  "automerge": true,
+  "automergeType": "pr",
+  "automergeStrategy": "merge",
+  "platformAutomerge": true
+}
